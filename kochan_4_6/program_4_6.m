@@ -13,6 +13,10 @@
 -(void) subtract: (double) value;
 -(void) multiply: (double) value;
 -(void) divide: (double) value;
+
+-(void) ChangeSign;
+-(void) reciprocal;
+-(void) xSquared;
 @end
 
 @implementation Calculator
@@ -50,6 +54,21 @@
 {
 	accumulator /= value;
 }
+
+-(void) ChangeSign
+{
+	accumulator = -accumulator;
+}
+
+-(void) reciprocal
+{
+	accumulator = 1 / accumulator;
+}
+
+-(void) xSquared
+{
+	accumulator *= accumulator;
+}
 @end
 
 int main(int argc, char *argv[])
@@ -65,6 +84,15 @@ int main(int argc, char *argv[])
 	[calc multiply: 5];
 
 	NSLog(@"The result is %g", [calc accumulator]);
+
+	[calc ChangeSign];
+	NSLog(@"The ChangeSign result is %g", [calc accumulator]);
+
+	[calc reciprocal];
+	NSLog(@"The reciprocal result is %g", [calc accumulator]);
+
+	[calc xSquared];
+	NSLog(@"The xSquared result is %g", [calc accumulator]);
 
 	[calc release];
 
