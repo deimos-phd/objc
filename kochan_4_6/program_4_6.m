@@ -3,6 +3,7 @@
 @interface Calculator: NSObject
 {
 	double accumulator;
+	double memory;
 }
 
 -(void) setAccumulator: (double) value;
@@ -17,6 +18,13 @@
 -(void) ChangeSign;
 -(void) reciprocal;
 -(void) xSquared;
+
+-(double) memoryClear;
+-(double) memoryStore;
+-(double) memoryRecall;
+-(double) memoryAdd;
+-(double) memorySubtract;
+-(double) memory;
 @end
 
 @implementation Calculator
@@ -69,6 +77,41 @@
 {
 	accumulator *= accumulator;
 }
+
+-(double) memoryClear
+{
+	memory = 0;
+	return accumulator;
+}
+
+-(double) memoryStore
+{
+	memory = accumulator;
+	return accumulator;
+}
+
+-(double) memoryRecall
+{
+	accumulator = memory;
+	return accumulator;
+}
+
+-(double) memoryAdd
+{
+	memory += accumulator;
+	return accumulator;
+}
+
+-(double) memorySubtract
+{
+	memory -= accumulator;
+	return accumulator;
+}
+
+-(double) memory
+{
+	return memory;
+}
 @end
 
 int main(int argc, char *argv[])
@@ -93,6 +136,16 @@ int main(int argc, char *argv[])
 
 	[calc xSquared];
 	NSLog(@"The xSquared result is %g", [calc accumulator]);
+
+	[calc memoryStore];
+	[calc memoryAdd];
+	[calc memorySubtract];
+	[calc memoryRecall];
+
+	NSLog(@"The result is %g (%g)", [calc accumulator], [calc memory]);
+
+	[calc memoryClear];
+	NSLog(@"The result is %g (%g)", [calc accumulator], [calc memory]);
 
 	[calc release];
 
