@@ -33,14 +33,6 @@
 	denominator = d;
 }
 
-// -(void) add: (Fraction *) f
-// {
-// 	numerator = numerator * f.denominator + denominator * f.numerator;
-// 	denominator *= f.denominator;
-
-// 	[self reduce];
-// }
-
 -(Fraction *) add: (Fraction *) f
 {
 	Fraction *result = [[Fraction alloc] init];
