@@ -27,4 +27,10 @@
 	denominator = d;
 }
 
+-(void) set: (int) n : (int) d
+{
+	numerator = n;
+	denominator = d;
+}
+
 @end

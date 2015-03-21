@@ -18,6 +18,11 @@ int main(int argc, char *argv[])
 	[myFraction setTo: 2 over: 3];
 	NSLog(@"The value of myFraction is: %i/%i\n", myFraction.numerator, myFraction.denominator);
 	NSLog(@"converted number is %g", myFraction.ConvertToNum);
+
+	[myFraction set: 2 : 4];
+	NSLog(@"The value of myFraction is: %i/%i\n", myFraction.numerator, myFraction.denominator);
+	NSLog(@"converted number is %g", myFraction.ConvertToNum);
+
 	[myFraction release];
 
 	[pool drain];
