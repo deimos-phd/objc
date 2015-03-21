@@ -23,6 +23,16 @@ int main(int argc, char *argv[])
 	NSLog(@"The value of myFraction is: %i/%i\n", myFraction.numerator, myFraction.denominator);
 	NSLog(@"converted number is %g", myFraction.ConvertToNum);
 
+	Fraction *bFraction = [[Fraction alloc] init];
+
+	[bFraction set: 3 : 4];
+
+	[myFraction add: bFraction];
+
+	NSLog(@"The value of myFraction is: %i/%i\n", myFraction.numerator, myFraction.denominator);
+	NSLog(@"converted number is %g", myFraction.ConvertToNum);
+
+	[bFraction release];
 	[myFraction release];
 
 	[pool drain];
