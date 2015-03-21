@@ -10,7 +10,7 @@
 
 -(void) print
 {
-	NSLog(@"%i/%i", numerator, denominator);
+	NSLog(@"(%i) %i/%i", [self getSign], numerator, denominator);
 }
 
 -(double) ConvertToNum
@@ -55,6 +55,48 @@
 	return result;
 }
 
+-(Fraction *) subtract: (Fraction *) f
+{
+	Fraction *result = [[Fraction alloc] init];
+	int resNum, resDenom;
+
+	resNum = numerator * f.denominator - denominator * f.numerator;
+	resDenom = denominator * f.denominator;
+
+	[result setTo: resNum over: resDenom];
+	[result reduce];
+
+	return result;
+}
+
+-(Fraction *) multiply: (Fraction *) f
+{
+	Fraction *result = [[Fraction alloc] init];
+	int resNum, resDenom;
+
+	resNum = numerator * f.numerator;
+	resDenom = denominator * f.denominator;
+
+	[result setTo: resNum over: resDenom];
+	[result reduce];
+
+	return result;
+}
+
+-(Fraction *) divide: (Fraction *) f
+{
+	Fraction *result = [[Fraction alloc] init];
+	int resNum, resDenom;
+
+	resNum = numerator * f.denominator;
+	resDenom = denominator * f.numerator;
+
+	[result setTo: resNum over: resDenom];
+	[result reduce];
+
+	return result;
+}
+
 -(void) reduce
 {
 	int u = numerator;
@@ -69,6 +111,14 @@
 
 	numerator /= u;
 	denominator /= u;
+}
+
+-(int) getSign
+{
+	double temp = [self ConvertToNum];
+	if(temp < 0)
+		return -1;
+	return 1;
 }
 
 @end

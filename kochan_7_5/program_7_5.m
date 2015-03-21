@@ -13,17 +13,44 @@ int main(int argc, char *argv[])
 	[aFraction setTo: 1 over: 4];
 	[bFraction setTo: 1 over: 2];
 
+	NSLog(@"----------");
 	[aFraction print];
 	NSLog(@"+");
 	[bFraction print];
 	NSLog(@"=");
-
 	rFraction = [aFraction add: bFraction];
 	[rFraction print];
+	[rFraction release];
+
+	NSLog(@"----------");
+	[aFraction print];
+	NSLog(@"*");
+	[bFraction print];
+	NSLog(@"=");
+	rFraction = [aFraction multiply: bFraction];
+	[rFraction print];
+	[rFraction release];
+
+	NSLog(@"----------");
+	[aFraction print];
+	NSLog(@"/");
+	[bFraction print];
+	NSLog(@"=");
+	rFraction = [aFraction divide: bFraction];
+	[rFraction print];
+	[rFraction release];
+
+	NSLog(@"----------");
+	[aFraction print];
+	NSLog(@"-");
+	[bFraction print];
+	NSLog(@"=");
+	rFraction = [aFraction subtract: bFraction];
+	[rFraction print];
+	[rFraction release];
 
 	[aFraction release];
 	[bFraction release];
-	[rFraction release];
 
 	[pool drain];
 
