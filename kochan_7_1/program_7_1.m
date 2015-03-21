@@ -9,8 +9,8 @@ int main(int argc, char *argv[])
 	Fraction *myFraction = [[Fraction alloc] init];
 
 	// set fraction to 1/3
-	[myFraction SetNumerator: 1];
-	[myFraction SetDenominator: 3];
+	[myFraction setNumerator: 1];
+	[myFraction setDenominator: 3];
 	[myFraction print];
 	NSLog(@"The value of myFraction is: %i/%i\n", [myFraction numerator], [myFraction denominator]);
 	[myFraction release];

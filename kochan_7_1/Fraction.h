@@ -8,9 +8,8 @@
 	int denominator;
 }
 
+@property int numerator;
+@property int denominator;
+
 -(void) print;
--(void) SetNumerator: (int) n;
--(void) SetDenominator: (int) d;
--(int) numerator;
--(int) denominator;
 @end
