@@ -13,4 +13,12 @@
 	NSLog(@"%i/%i", numerator, denominator);
 }
 
+-(double) ConvertToNum
+{
+	if(denominator != 0)
+		return (double)numerator / denominator;
+	else
+		return 1.0;
+}
+
 @end

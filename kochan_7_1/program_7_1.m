@@ -9,10 +9,11 @@ int main(int argc, char *argv[])
 	Fraction *myFraction = [[Fraction alloc] init];
 
 	// set fraction to 1/3
-	[myFraction setNumerator: 1];
-	[myFraction setDenominator: 3];
-	[myFraction print];
-	NSLog(@"The value of myFraction is: %i/%i\n", [myFraction numerator], [myFraction denominator]);
+	myFraction.numerator = 1;
+	myFraction.denominator = 3;
+	myFraction.print;
+	NSLog(@"The value of myFraction is: %i/%i\n", myFraction.numerator, myFraction.denominator);
+	NSLog(@"converted number is %g", myFraction.ConvertToNum);
 	[myFraction release];
 
 	[pool drain];

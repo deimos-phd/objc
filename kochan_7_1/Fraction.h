@@ -12,4 +12,5 @@
 @property int denominator;
 
 -(void) print;
+-(double) ConvertToNum;
 @end
