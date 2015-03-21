@@ -13,4 +13,5 @@
 
 -(void) print;
 -(double) ConvertToNum;
+-(void) setTo: (int) n over: (int) d;
 @end
